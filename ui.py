@@ -8,7 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-class Ui_main_window(object):
+class Ui_main_window(QtWidgets.QMainWindow):
     def setupUi(self, main_window):
         main_window.setObjectName("main_window")
         main_window.resize(508, 341)
@@ -65,7 +65,6 @@ class Ui_main_window(object):
         self.statusbar.setAutoFillBackground(False)
         self.statusbar.setObjectName("statusbar")
         main_window.setStatusBar(self.statusbar)
-
         self.retranslateUi(main_window)
         QtCore.QMetaObject.connectSlotsByName(main_window)
 
@@ -75,6 +74,11 @@ class Ui_main_window(object):
         self.send_btn.setText(_translate("main_window", "Send"))
         self.connect_btn.setText(_translate("main_window", "Connect"))
         self.disconnect_btn.setText(_translate("main_window", "Disconnect"))
+
+    #Set Status Bar Message
+    def set_status_bar(self,text):
+        self.statusbar.showMessage(text)
+
 
 
 if __name__ == "__main__":
