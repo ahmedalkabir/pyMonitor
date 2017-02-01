@@ -1,0 +1,88 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'front_end.ui'
+#
+# Created by: PyQt5 UI code generator 5.7.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_main_window(object):
+    def setupUi(self, main_window):
+        main_window.setObjectName("main_window")
+        main_window.resize(508, 309)
+        self.centralwidget = QtWidgets.QWidget(main_window)
+        self.centralwidget.setObjectName("centralwidget")
+        self.gridLayoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(10, 0, 481, 41))
+        self.gridLayoutWidget.setObjectName("gridLayoutWidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout.setObjectName("gridLayout")
+        self.pushButton = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.pushButton.setObjectName("pushButton")
+        self.gridLayout.addWidget(self.pushButton, 0, 1, 1, 1)
+        self.lineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget)
+        self.lineEdit.setObjectName("lineEdit")
+        self.gridLayout.addWidget(self.lineEdit, 0, 0, 1, 1)
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 50, 481, 171))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.verticalLayoutWidget)
+        self.plainTextEdit.setObjectName("plainTextEdit")
+        self.verticalLayout.addWidget(self.plainTextEdit)
+        self.gridLayoutWidget_2 = QtWidgets.QWidget(self.centralwidget)
+        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(10, 230, 481, 41))
+        self.gridLayoutWidget_2.setObjectName("gridLayoutWidget_2")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget_2)
+        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.pushButton_2 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.gridLayout_2.addWidget(self.pushButton_2, 0, 1, 1, 1)
+        self.pushButton_3 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.gridLayout_2.addWidget(self.pushButton_3, 0, 0, 1, 1)
+        self.buad_rate = QtWidgets.QComboBox(self.gridLayoutWidget_2)
+        self.buad_rate.setObjectName("buad_rate")
+        self.gridLayout_2.addWidget(self.buad_rate, 0, 3, 1, 1)
+        self.comboBox_3 = QtWidgets.QComboBox(self.gridLayoutWidget_2)
+        self.comboBox_3.setObjectName("comboBox_3")
+        self.gridLayout_2.addWidget(self.comboBox_3, 0, 2, 1, 1)
+        self.serial_port = QtWidgets.QComboBox(self.gridLayoutWidget_2)
+        self.serial_port.setObjectName("serial_port")
+        self.gridLayout_2.addWidget(self.serial_port, 0, 4, 1, 1)
+        main_window.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(main_window)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 508, 21))
+        self.menubar.setObjectName("menubar")
+        main_window.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(main_window)
+        self.statusbar.setAutoFillBackground(False)
+        self.statusbar.setObjectName("statusbar")
+        main_window.setStatusBar(self.statusbar)
+
+        self.retranslateUi(main_window)
+        QtCore.QMetaObject.connectSlotsByName(main_window)
+
+    def retranslateUi(self, main_window):
+        _translate = QtCore.QCoreApplication.translate
+        main_window.setWindowTitle(_translate("main_window", "pyMonitor"))
+        self.pushButton.setText(_translate("main_window", "Send"))
+        self.pushButton_2.setText(_translate("main_window", "Connect"))
+        self.pushButton_3.setText(_translate("main_window", "Disconnect"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    main_window = QtWidgets.QMainWindow()
+    ui = Ui_main_window()
+    ui.setupUi(main_window)
+    main_window.show()
+    sys.exit(app.exec_())
+
