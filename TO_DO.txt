@@ -1,0 +1,5 @@
+################## PyMonitor Project #########################
+
+1- Create UI By PyQT and include it to Project
+2- Design two classes one for ui and other for core maybe class for 
+	communcation 
