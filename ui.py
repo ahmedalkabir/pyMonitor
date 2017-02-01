@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_main_window(object):
     def setupUi(self, main_window):
         main_window.setObjectName("main_window")
-        main_window.resize(508, 309)
+        main_window.resize(508, 341)
         self.centralwidget = QtWidgets.QWidget(main_window)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayoutWidget = QtWidgets.QWidget(self.centralwidget)
@@ -20,9 +20,9 @@ class Ui_main_window(object):
         self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
-        self.pushButton = QtWidgets.QPushButton(self.gridLayoutWidget)
-        self.pushButton.setObjectName("pushButton")
-        self.gridLayout.addWidget(self.pushButton, 0, 1, 1, 1)
+        self.send_btn = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.send_btn.setObjectName("send_btn")
+        self.gridLayout.addWidget(self.send_btn, 0, 1, 1, 1)
         self.lineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget)
         self.lineEdit.setObjectName("lineEdit")
         self.gridLayout.addWidget(self.lineEdit, 0, 0, 1, 1)
@@ -41,12 +41,12 @@ class Ui_main_window(object):
         self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.pushButton_2 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.gridLayout_2.addWidget(self.pushButton_2, 0, 1, 1, 1)
-        self.pushButton_3 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.gridLayout_2.addWidget(self.pushButton_3, 0, 0, 1, 1)
+        self.connect_btn = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        self.connect_btn.setObjectName("connect_btn")
+        self.gridLayout_2.addWidget(self.connect_btn, 0, 1, 1, 1)
+        self.disconnect_btn = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        self.disconnect_btn.setObjectName("disconnect_btn")
+        self.gridLayout_2.addWidget(self.disconnect_btn, 0, 0, 1, 1)
         self.buad_rate = QtWidgets.QComboBox(self.gridLayoutWidget_2)
         self.buad_rate.setObjectName("buad_rate")
         self.gridLayout_2.addWidget(self.buad_rate, 0, 3, 1, 1)
@@ -72,9 +72,9 @@ class Ui_main_window(object):
     def retranslateUi(self, main_window):
         _translate = QtCore.QCoreApplication.translate
         main_window.setWindowTitle(_translate("main_window", "pyMonitor"))
-        self.pushButton.setText(_translate("main_window", "Send"))
-        self.pushButton_2.setText(_translate("main_window", "Connect"))
-        self.pushButton_3.setText(_translate("main_window", "Disconnect"))
+        self.send_btn.setText(_translate("main_window", "Send"))
+        self.connect_btn.setText(_translate("main_window", "Connect"))
+        self.disconnect_btn.setText(_translate("main_window", "Disconnect"))
 
 
 if __name__ == "__main__":
