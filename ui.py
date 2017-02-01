@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+#   Developer:Ahmed Alkabir
 # Form implementation generated from reading ui file 'front_end.ui'
 #
 # Created by: PyQt5 UI code generator 5.7.1
@@ -48,9 +48,9 @@ class Ui_main_window(QtWidgets.QMainWindow):
         self.disconnect_btn = QtWidgets.QPushButton(self.gridLayoutWidget_2)
         self.disconnect_btn.setObjectName("disconnect_btn")
         self.gridLayout_2.addWidget(self.disconnect_btn, 0, 0, 1, 1)
-        self.buad_rate = QtWidgets.QComboBox(self.gridLayoutWidget_2)
-        self.buad_rate.setObjectName("buad_rate")
-        self.gridLayout_2.addWidget(self.buad_rate, 0, 3, 1, 1)
+        self.baud_rate = QtWidgets.QComboBox(self.gridLayoutWidget_2)
+        self.baud_rate.setObjectName("buad_rate")
+        self.gridLayout_2.addWidget(self.baud_rate, 0, 3, 1, 1)
         self.comboBox_3 = QtWidgets.QComboBox(self.gridLayoutWidget_2)
         self.comboBox_3.setObjectName("comboBox_3")
         self.gridLayout_2.addWidget(self.comboBox_3, 0, 2, 1, 1)
@@ -84,9 +84,12 @@ class Ui_main_window(QtWidgets.QMainWindow):
 
     # Add tuple of Serial Port for Combo box
     def add_serial_port(self,tuple):
-        self.serial_port.addItem(tuple)
-        pass
+        self.serial_port.addItems(tuple)
 
+
+    # Add tuple of Buad Rate of Serial Port
+    def add_baud_rate(self,tuple):
+        self.baud_rate.addItems(tuple)
 
 if __name__== "__main__":
     import sys
