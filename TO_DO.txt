@@ -1,6 +1,5 @@
 ################## PyMonitor Project #########################
 
 1- Create UI By PyQT5 and include it to Project	(85% Done)
-2- Design two classes one for ui and other for core maybe class for 
-	communcation 
-3- 
+2- Design class for UI (Done)
+3- Design class server-side and implement it in main.py
