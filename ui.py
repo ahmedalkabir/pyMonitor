@@ -9,7 +9,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_main_window(QtWidgets.QMainWindow):
-    def setupUi(self, main_window):
+
+    def __init__(self, main_window):
         main_window.setObjectName("main_window")
         main_window.resize(508, 341)
         self.centralwidget = QtWidgets.QWidget(main_window)
@@ -68,6 +69,8 @@ class Ui_main_window(QtWidgets.QMainWindow):
         self.retranslateUi(main_window)
         QtCore.QMetaObject.connectSlotsByName(main_window)
 
+
+
     def retranslateUi(self, main_window):
         _translate = QtCore.QCoreApplication.translate
         main_window.setWindowTitle(_translate("main_window", "pyMonitor"))
@@ -75,18 +78,21 @@ class Ui_main_window(QtWidgets.QMainWindow):
         self.connect_btn.setText(_translate("main_window", "Connect"))
         self.disconnect_btn.setText(_translate("main_window", "Disconnect"))
 
-    #Set Status Bar Message
+    # Set Status Bar Message
     def set_status_bar(self,text):
         self.statusbar.showMessage(text)
 
+    # Add tuple of Serial Port for Combo box
+    def add_serial_port(self,tuple):
+        self.serial_port.addItem(tuple)
+        pass
 
 
-if __name__ == "__main__":
+if __name__== "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     main_window = QtWidgets.QMainWindow()
-    ui = Ui_main_window()
-    ui.setupUi(main_window)
+    ui = Ui_main_window(main_window)
     main_window.show()
     sys.exit(app.exec_())
 
