@@ -11,11 +11,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_main_window(object):
     def setupUi(self, main_window):
         main_window.setObjectName("main_window")
-        main_window.resize(508, 367)
+        main_window.resize(606, 371)
         self.centralwidget = QtWidgets.QWidget(main_window)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(10, 0, 481, 41))
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(10, 0, 591, 41))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.grid_1 = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.grid_1.setContentsMargins(0, 0, 0, 0)
@@ -27,7 +27,7 @@ class Ui_main_window(object):
         self.lineEdit.setObjectName("lineEdit")
         self.grid_1.addWidget(self.lineEdit, 0, 0, 1, 1)
         self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 50, 481, 171))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 50, 591, 201))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -37,40 +37,36 @@ class Ui_main_window(object):
         self.plainTextEdit.setObjectName("plainTextEdit")
         self.verticalLayout.addWidget(self.plainTextEdit)
         self.gridLayoutWidget_2 = QtWidgets.QWidget(self.centralwidget)
-        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(10, 230, 481, 51))
+        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(10, 247, 591, 51))
         self.gridLayoutWidget_2.setObjectName("gridLayoutWidget_2")
         self.grid_2 = QtWidgets.QGridLayout(self.gridLayoutWidget_2)
         self.grid_2.setContentsMargins(0, 0, 0, 0)
         self.grid_2.setObjectName("grid_2")
         self.status_txt = QtWidgets.QComboBox(self.gridLayoutWidget_2)
         self.status_txt.setObjectName("status_txt")
-        self.grid_2.addWidget(self.status_txt, 1, 2, 1, 1)
+        self.grid_2.addWidget(self.status_txt, 0, 2, 1, 1)
         self.baud_rate = QtWidgets.QComboBox(self.gridLayoutWidget_2)
         self.baud_rate.setObjectName("baud_rate")
-        self.grid_2.addWidget(self.baud_rate, 1, 1, 1, 1)
+        self.grid_2.addWidget(self.baud_rate, 0, 1, 1, 1)
         self.bytesize = QtWidgets.QComboBox(self.gridLayoutWidget_2)
         self.bytesize.setEnabled(False)
         self.bytesize.setObjectName("bytesize")
-        self.grid_2.addWidget(self.bytesize, 1, 3, 1, 1)
+        self.grid_2.addWidget(self.bytesize, 0, 3, 1, 1)
         self.serial_port = QtWidgets.QComboBox(self.gridLayoutWidget_2)
         self.serial_port.setEditable(False)
         self.serial_port.setCurrentText("")
         self.serial_port.setObjectName("serial_port")
-        self.grid_2.addWidget(self.serial_port, 1, 0, 1, 1)
+        self.grid_2.addWidget(self.serial_port, 0, 0, 1, 1)
         self.stop_bits = QtWidgets.QComboBox(self.gridLayoutWidget_2)
         self.stop_bits.setEnabled(False)
         self.stop_bits.setObjectName("stop_bits")
-        self.grid_2.addWidget(self.stop_bits, 1, 6, 1, 1)
+        self.grid_2.addWidget(self.stop_bits, 0, 6, 1, 1)
         self.parity_check = QtWidgets.QComboBox(self.gridLayoutWidget_2)
         self.parity_check.setEnabled(False)
         self.parity_check.setObjectName("parity_check")
-        self.grid_2.addWidget(self.parity_check, 1, 5, 1, 1)
-        self.checkBox = QtWidgets.QCheckBox(self.gridLayoutWidget_2)
-        self.checkBox.setObjectName("checkBox")
-        self.checkBox.stateChanged.connect(self.unlock_advanced_option)
-        self.grid_2.addWidget(self.checkBox, 0, 3, 1, 1)
+        self.grid_2.addWidget(self.parity_check, 0, 5, 1, 1)
         self.gridLayoutWidget_3 = QtWidgets.QWidget(self.centralwidget)
-        self.gridLayoutWidget_3.setGeometry(QtCore.QRect(10, 290, 481, 31))
+        self.gridLayoutWidget_3.setGeometry(QtCore.QRect(10, 300, 591, 31))
         self.gridLayoutWidget_3.setObjectName("gridLayoutWidget_3")
         self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget_3)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -84,6 +80,9 @@ class Ui_main_window(object):
         self.about = QtWidgets.QPushButton(self.gridLayoutWidget_3)
         self.about.setObjectName("about")
         self.gridLayout.addWidget(self.about, 0, 3, 1, 1)
+        self.checkBox = QtWidgets.QCheckBox(self.gridLayoutWidget_3)
+        self.checkBox.setObjectName("checkBox")
+        self.gridLayout.addWidget(self.checkBox, 0, 2, 1, 1)
         self.gridLayoutWidget.raise_()
         self.verticalLayoutWidget.raise_()
         self.gridLayoutWidget_2.raise_()
@@ -91,7 +90,7 @@ class Ui_main_window(object):
         self.serial_port.raise_()
         main_window.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(main_window)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 508, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 606, 21))
         self.menubar.setObjectName("menubar")
         main_window.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(main_window)
@@ -106,38 +105,18 @@ class Ui_main_window(object):
         _translate = QtCore.QCoreApplication.translate
         main_window.setWindowTitle(_translate("main_window", "pyMonitor"))
         self.send_btn.setText(_translate("main_window", "Send"))
-        self.checkBox.setText(_translate("main_window", "Customize Advanced Option"))
         self.disconnect_btn.setText(_translate("main_window", "Disconnect"))
         self.connect_btn.setText(_translate("main_window", "Connect"))
         self.about.setText(_translate("main_window", "About"))
+        self.checkBox.setText(_translate("main_window", "Customize Advance Option"))
 
 
-
-    # Add list of Serial Port to serial_port object of Combo Box
-    def add_serial_port(self,list_serial):
-        #Add it
-        self.serial_port.addItems(list_serial)
-
-    # Add list of Baud rate to baud_rate object of Combo Box
-    def add_baud_rate(self,list_baud):
-        # cause value of baud rate list are integer we have
-        # to include it to string in ui
-        for list in list_baud:
-            self.baud_rate.addItem(str(list))
-
-    #
-
-    # Unlcok Advanced option by Check Box
-    def unlock_advanced_option(self):
-
-        # Make it all Enabled
-        if self.checkBox.isChecked() is not False:
-            self.stop_bits.setEnabled(True)
-            self.parity_check.setEnabled(True)
-            self.bytesize.setEnabled(True)
-        # if unchecked disable it all
-        elif self.checkBox.isChecked() is not True:
-            self.stop_bits.setEnabled(False)
-            self.parity_check.setEnabled(False)
-            self.bytesize.setEnabled(False)
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    main_window = QtWidgets.QMainWindow()
+    ui = Ui_main_window()
+    ui.setupUi(main_window)
+    main_window.show()
+    sys.exit(app.exec_())
 
