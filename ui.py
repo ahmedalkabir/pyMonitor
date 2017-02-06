@@ -33,6 +33,7 @@ class Ui_main_window(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.plainTextEdit = QtWidgets.QPlainTextEdit(self.verticalLayoutWidget)
+        self.plainTextEdit.setReadOnly(True)
         self.plainTextEdit.setObjectName("plainTextEdit")
         self.verticalLayout.addWidget(self.plainTextEdit)
         self.gridLayoutWidget_2 = QtWidgets.QWidget(self.centralwidget)
