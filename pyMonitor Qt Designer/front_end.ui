@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>508</width>
-    <height>367</height>
+    <width>606</width>
+    <height>371</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>481</width>
+      <width>591</width>
       <height>41</height>
      </rect>
     </property>
@@ -41,8 +41,8 @@
      <rect>
       <x>10</x>
       <y>50</y>
-      <width>481</width>
-      <height>171</height>
+      <width>591</width>
+      <height>201</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -59,26 +59,26 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>230</y>
-      <width>481</width>
+      <y>247</y>
+      <width>591</width>
       <height>51</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="grid_2">
-     <item row="1" column="2">
+     <item row="0" column="2">
       <widget class="QComboBox" name="status_txt"/>
      </item>
-     <item row="1" column="1">
+     <item row="0" column="1">
       <widget class="QComboBox" name="baud_rate"/>
      </item>
-     <item row="1" column="3">
+     <item row="0" column="3">
       <widget class="QComboBox" name="bytesize">
        <property name="enabled">
         <bool>false</bool>
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
+     <item row="0" column="0">
       <widget class="QComboBox" name="serial_port">
        <property name="editable">
         <bool>false</bool>
@@ -88,24 +88,17 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="6">
+     <item row="0" column="6">
       <widget class="QComboBox" name="stop_bits">
        <property name="enabled">
         <bool>false</bool>
        </property>
       </widget>
      </item>
-     <item row="1" column="5">
+     <item row="0" column="5">
       <widget class="QComboBox" name="parity_check">
        <property name="enabled">
         <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3">
-      <widget class="QCheckBox" name="checkBox">
-       <property name="text">
-        <string>Customize </string>
        </property>
       </widget>
      </item>
@@ -115,8 +108,8 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>290</y>
-      <width>481</width>
+      <y>300</y>
+      <width>591</width>
       <height>31</height>
      </rect>
     </property>
@@ -142,6 +135,13 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="2">
+      <widget class="QCheckBox" name="checkBox">
+       <property name="text">
+        <string>Customize Advance Option</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <zorder>gridLayoutWidget</zorder>
@@ -155,7 +155,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>508</width>
+     <width>606</width>
      <height>21</height>
     </rect>
    </property>
