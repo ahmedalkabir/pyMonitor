@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>508</width>
-    <height>341</height>
+    <height>352</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
       <height>41</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout">
+    <layout class="QGridLayout" name="grid_1">
      <item row="0" column="1">
       <widget class="QPushButton" name="send_btn">
        <property name="text">
@@ -60,15 +60,35 @@
       <height>41</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout_2">
+    <layout class="QGridLayout" name="grid_2">
+     <item row="0" column="3">
+      <widget class="QComboBox" name="baud_rate"/>
+     </item>
+     <item row="0" column="2">
+      <widget class="QComboBox" name="status_txt"/>
+     </item>
+     <item row="0" column="4">
+      <widget class="QComboBox" name="serial_port"/>
+     </item>
      <item row="0" column="1">
-      <widget class="QPushButton" name="connect_btn">
-       <property name="text">
-        <string>Connect</string>
-       </property>
-      </widget>
+      <widget class="QComboBox" name="parity_check"/>
      </item>
      <item row="0" column="0">
+      <widget class="QComboBox" name="stop_bits"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>280</y>
+      <width>481</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="1">
       <widget class="QPushButton" name="disconnect_btn">
        <property name="text">
         <string>Disconnect</string>
@@ -76,13 +96,18 @@
       </widget>
      </item>
      <item row="0" column="3">
-      <widget class="QComboBox" name="buad_rate"/>
+      <widget class="QPushButton" name="about">
+       <property name="text">
+        <string>About</string>
+       </property>
+      </widget>
      </item>
-     <item row="0" column="2">
-      <widget class="QComboBox" name="comboBox_3"/>
-     </item>
-     <item row="0" column="4">
-      <widget class="QComboBox" name="serial_port"/>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="connect_btn">
+       <property name="text">
+        <string>Connect</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
