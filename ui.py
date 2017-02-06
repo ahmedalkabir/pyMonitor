@@ -67,6 +67,7 @@ class Ui_main_window(object):
         self.grid_2.addWidget(self.parity_check, 1, 5, 1, 1)
         self.checkBox = QtWidgets.QCheckBox(self.gridLayoutWidget_2)
         self.checkBox.setObjectName("checkBox")
+        self.checkBox.stateChanged.connect(self.unlock_advanced_option)
         self.grid_2.addWidget(self.checkBox, 0, 3, 1, 1)
         self.gridLayoutWidget_3 = QtWidgets.QWidget(self.centralwidget)
         self.gridLayoutWidget_3.setGeometry(QtCore.QRect(10, 290, 481, 31))
@@ -110,6 +111,8 @@ class Ui_main_window(object):
         self.connect_btn.setText(_translate("main_window", "Connect"))
         self.about.setText(_translate("main_window", "About"))
 
+
+
     # Add list of Serial Port to serial_port object of Combo Box
     def add_serial_port(self,list_serial):
         #Add it
@@ -121,3 +124,20 @@ class Ui_main_window(object):
         # to include it to string in ui
         for list in list_baud:
             self.baud_rate.addItem(str(list))
+
+    #
+
+    # Unlcok Advanced option by Check Box
+    def unlock_advanced_option(self):
+
+        # Make it all Enabled
+        if self.checkBox.isChecked() is not False:
+            self.stop_bits.setEnabled(True)
+            self.parity_check.setEnabled(True)
+            self.bytesize.setEnabled(True)
+        # if unchecked disable it all
+        elif self.checkBox.isChecked() is not True:
+            self.stop_bits.setEnabled(False)
+            self.parity_check.setEnabled(False)
+            self.bytesize.setEnabled(False)
+
