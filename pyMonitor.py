@@ -21,16 +21,23 @@ class pyMonitor():
     #   Constructor
     def __init__(self, port, baud_rate, byte_size=serial.EIGHTBITS, parity=serial.PARITY_NONE, stop_bit=serial.STOPBITS_ONE):
 
-        self.__main_conn = serial.Serial(port, baud_rate, bytesize=byte_size, parity=parity, stopbits=stop_bit)
+            # initialize the connection and if anything ok open the port
+            self.__main_conn = serial.Serial(port, baud_rate, bytesize=byte_size, parity=parity, stopbits=stop_bit)
 
-        pass
+
 
     # Close Connection of Serial Communication
-    @classmethod
-    def close_connection(cls):
-        if cls.__main_conn is not None:
-            cls.__main_conn.close()
+    def close_connection(self):
+        if self.__main_conn is not None:
+            self.__main_conn.close()
 
+    # Get Name of Current Port
+    def get_name(self):
+        return self.__main_conn.name
+
+    # Receive Data from Devices
+    def receive_data(self):
+        pass
 
     # Ports of Computers and it depends on os system
     @staticmethod
@@ -74,7 +81,9 @@ class pyMonitor():
 
 
 def main():
-    a = pyMonitor(pyMonitor.get_port()[0],pyMonitor.baud_rate[0])
+    pass
+
+
 
 
 main()
