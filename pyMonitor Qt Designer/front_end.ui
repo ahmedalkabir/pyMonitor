@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>508</width>
-    <height>352</height>
+    <height>367</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -57,24 +57,53 @@
       <x>10</x>
       <y>230</y>
       <width>481</width>
-      <height>41</height>
+      <height>51</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="grid_2">
-     <item row="0" column="3">
-      <widget class="QComboBox" name="baud_rate"/>
-     </item>
-     <item row="0" column="2">
+     <item row="1" column="2">
       <widget class="QComboBox" name="status_txt"/>
      </item>
-     <item row="0" column="4">
-      <widget class="QComboBox" name="serial_port"/>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="baud_rate"/>
      </item>
-     <item row="0" column="1">
-      <widget class="QComboBox" name="parity_check"/>
+     <item row="1" column="3">
+      <widget class="QComboBox" name="bytesize">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QComboBox" name="stop_bits"/>
+     <item row="1" column="0">
+      <widget class="QComboBox" name="serial_port">
+       <property name="editable">
+        <bool>false</bool>
+       </property>
+       <property name="currentText">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="6">
+      <widget class="QComboBox" name="stop_bits">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="5">
+      <widget class="QComboBox" name="parity_check">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QCheckBox" name="checkBox">
+       <property name="text">
+        <string>Customize </string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -82,7 +111,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>280</y>
+      <y>290</y>
       <width>481</width>
       <height>31</height>
      </rect>
@@ -95,13 +124,6 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="3">
-      <widget class="QPushButton" name="about">
-       <property name="text">
-        <string>About</string>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="0">
       <widget class="QPushButton" name="connect_btn">
        <property name="text">
@@ -109,8 +131,20 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="about">
+       <property name="text">
+        <string>About</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
+   <zorder>gridLayoutWidget</zorder>
+   <zorder>verticalLayoutWidget</zorder>
+   <zorder>gridLayoutWidget_2</zorder>
+   <zorder>gridLayoutWidget_3</zorder>
+   <zorder>serial_port</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
