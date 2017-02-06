@@ -9,6 +9,15 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_main_window(object):
+
+    # constructor
+    def __init__(self,main_window):
+        # initialize the ui
+        self.setupUi(main_window)
+        # Connect Object Layout to Functions
+        self.checkBox.stateChanged.connect(self.unlock_advanced_option)
+
+
     def setupUi(self, main_window):
         main_window.setObjectName("main_window")
         main_window.resize(606, 371)
