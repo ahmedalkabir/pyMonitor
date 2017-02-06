@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#   Developer:Ahmed Alkabir
+
 # Form implementation generated from reading ui file 'front_end.ui'
 #
 # Created by: PyQt5 UI code generator 5.7.1
@@ -8,25 +8,24 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-class Ui_main_window(QtWidgets.QMainWindow):
-
-    def __init__(self, main_window):
+class Ui_main_window(object):
+    def setupUi(self, main_window):
         main_window.setObjectName("main_window")
-        main_window.resize(508, 341)
+        main_window.resize(508, 352)
         self.centralwidget = QtWidgets.QWidget(main_window)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayoutWidget = QtWidgets.QWidget(self.centralwidget)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(10, 0, 481, 41))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
-        self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout.setObjectName("gridLayout")
+        self.grid_1 = QtWidgets.QGridLayout(self.gridLayoutWidget)
+        self.grid_1.setContentsMargins(0, 0, 0, 0)
+        self.grid_1.setObjectName("grid_1")
         self.send_btn = QtWidgets.QPushButton(self.gridLayoutWidget)
         self.send_btn.setObjectName("send_btn")
-        self.gridLayout.addWidget(self.send_btn, 0, 1, 1, 1)
+        self.grid_1.addWidget(self.send_btn, 0, 1, 1, 1)
         self.lineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget)
         self.lineEdit.setObjectName("lineEdit")
-        self.gridLayout.addWidget(self.lineEdit, 0, 0, 1, 1)
+        self.grid_1.addWidget(self.lineEdit, 0, 0, 1, 1)
         self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 50, 481, 171))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
@@ -39,24 +38,39 @@ class Ui_main_window(QtWidgets.QMainWindow):
         self.gridLayoutWidget_2 = QtWidgets.QWidget(self.centralwidget)
         self.gridLayoutWidget_2.setGeometry(QtCore.QRect(10, 230, 481, 41))
         self.gridLayoutWidget_2.setObjectName("gridLayoutWidget_2")
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget_2)
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout_2.setObjectName("gridLayout_2")
-        self.connect_btn = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        self.connect_btn.setObjectName("connect_btn")
-        self.gridLayout_2.addWidget(self.connect_btn, 0, 1, 1, 1)
-        self.disconnect_btn = QtWidgets.QPushButton(self.gridLayoutWidget_2)
-        self.disconnect_btn.setObjectName("disconnect_btn")
-        self.gridLayout_2.addWidget(self.disconnect_btn, 0, 0, 1, 1)
+        self.grid_2 = QtWidgets.QGridLayout(self.gridLayoutWidget_2)
+        self.grid_2.setContentsMargins(0, 0, 0, 0)
+        self.grid_2.setObjectName("grid_2")
         self.baud_rate = QtWidgets.QComboBox(self.gridLayoutWidget_2)
-        self.baud_rate.setObjectName("buad_rate")
-        self.gridLayout_2.addWidget(self.baud_rate, 0, 3, 1, 1)
-        self.comboBox_3 = QtWidgets.QComboBox(self.gridLayoutWidget_2)
-        self.comboBox_3.setObjectName("comboBox_3")
-        self.gridLayout_2.addWidget(self.comboBox_3, 0, 2, 1, 1)
+        self.baud_rate.setObjectName("baud_rate")
+        self.grid_2.addWidget(self.baud_rate, 0, 3, 1, 1)
+        self.status_txt = QtWidgets.QComboBox(self.gridLayoutWidget_2)
+        self.status_txt.setObjectName("status_txt")
+        self.grid_2.addWidget(self.status_txt, 0, 2, 1, 1)
         self.serial_port = QtWidgets.QComboBox(self.gridLayoutWidget_2)
         self.serial_port.setObjectName("serial_port")
-        self.gridLayout_2.addWidget(self.serial_port, 0, 4, 1, 1)
+        self.grid_2.addWidget(self.serial_port, 0, 4, 1, 1)
+        self.parity_check = QtWidgets.QComboBox(self.gridLayoutWidget_2)
+        self.parity_check.setObjectName("parity_check")
+        self.grid_2.addWidget(self.parity_check, 0, 1, 1, 1)
+        self.stop_bits = QtWidgets.QComboBox(self.gridLayoutWidget_2)
+        self.stop_bits.setObjectName("stop_bits")
+        self.grid_2.addWidget(self.stop_bits, 0, 0, 1, 1)
+        self.gridLayoutWidget_3 = QtWidgets.QWidget(self.centralwidget)
+        self.gridLayoutWidget_3.setGeometry(QtCore.QRect(10, 280, 481, 31))
+        self.gridLayoutWidget_3.setObjectName("gridLayoutWidget_3")
+        self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget_3)
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout.setObjectName("gridLayout")
+        self.disconnect_btn = QtWidgets.QPushButton(self.gridLayoutWidget_3)
+        self.disconnect_btn.setObjectName("disconnect_btn")
+        self.gridLayout.addWidget(self.disconnect_btn, 0, 1, 1, 1)
+        self.about = QtWidgets.QPushButton(self.gridLayoutWidget_3)
+        self.about.setObjectName("about")
+        self.gridLayout.addWidget(self.about, 0, 3, 1, 1)
+        self.connect_btn = QtWidgets.QPushButton(self.gridLayoutWidget_3)
+        self.connect_btn.setObjectName("connect_btn")
+        self.gridLayout.addWidget(self.connect_btn, 0, 0, 1, 1)
         main_window.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(main_window)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 508, 21))
@@ -66,36 +80,25 @@ class Ui_main_window(QtWidgets.QMainWindow):
         self.statusbar.setAutoFillBackground(False)
         self.statusbar.setObjectName("statusbar")
         main_window.setStatusBar(self.statusbar)
+
         self.retranslateUi(main_window)
         QtCore.QMetaObject.connectSlotsByName(main_window)
-
-
 
     def retranslateUi(self, main_window):
         _translate = QtCore.QCoreApplication.translate
         main_window.setWindowTitle(_translate("main_window", "pyMonitor"))
         self.send_btn.setText(_translate("main_window", "Send"))
-        self.connect_btn.setText(_translate("main_window", "Connect"))
         self.disconnect_btn.setText(_translate("main_window", "Disconnect"))
-
-    # Set Status Bar Message
-    def set_status_bar(self,text):
-        self.statusbar.showMessage(text)
-
-    # Add tuple of Serial Port for Combo box
-    def add_serial_port(self,tuple):
-        self.serial_port.addItems(tuple)
+        self.about.setText(_translate("main_window", "About"))
+        self.connect_btn.setText(_translate("main_window", "Connect"))
 
 
-    # Add tuple of Buad Rate of Serial Port
-    def add_baud_rate(self,tuple):
-        self.baud_rate.addItems(tuple)
-
-"""if __name__== "__main__":
+if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     main_window = QtWidgets.QMainWindow()
-    ui = Ui_main_window(main_window)
+    ui = Ui_main_window()
+    ui.setupUi(main_window)
     main_window.show()
     sys.exit(app.exec_())
-"""
+
