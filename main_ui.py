@@ -5,6 +5,8 @@ import ui
 
 class Ui_window(ui.Ui_main_window):
 
+    def __init__(self,main_window):
+        super().__init__(main_window)
 
     # Add list of Serial Port to serial_port object of Combo Box
     def add_serial_port(self, list_serial):
