@@ -1,3 +1,9 @@
+"""
+    pyMonitor first Version
+
+    Written By :Ahmed Alkabir
+"""
+
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'front_end.ui'
@@ -10,12 +16,18 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_main_window(object):
 
+
+
     # constructor
     def __init__(self,main_window):
         # initialize the ui
         self.setupUi(main_window)
         # Connect Object Layout to Functions
         self.checkBox.stateChanged.connect(self.unlock_advanced_option)
+        self.connect_btn.clicked.connect(self.btn_connect)
+        self.send_btn.clicked.connect(self.send_data)
+        self.disconnect_btn.clicked.connect(self.btn_disconnect)
+
 
 
     def setupUi(self, main_window):
@@ -119,13 +131,4 @@ class Ui_main_window(object):
         self.about.setText(_translate("main_window", "About"))
         self.checkBox.setText(_translate("main_window", "Customize Advance Option"))
 
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    main_window = QtWidgets.QMainWindow()
-    ui = Ui_main_window()
-    ui.setupUi(main_window)
-    main_window.show()
-    sys.exit(app.exec_())
 

@@ -7,37 +7,92 @@
 
 # Library
 import serial
-import sys
+import sys,queue,time
 
-class pyMonitor():
+class pyMonitor(object):
 
     #baud rate of Serial communication
     baud_rate = [4800,9600,14400,19200,28800,38400,57600,115200]
 
+    # Parity Check list
+    Parity = {'PARITY_NONE':serial.PARITY_NONE,'PARITY_EVEN':serial.PARITY_EVEN,'PARITY_ODD':serial.PARITY_ODD}
+
+    # Bit Width List or ByteSize
+    ByteSize = {'FIVEBITS':serial.FIVEBITS,'SIXBITS':serial.SIXBITS,'SEVENBITS':serial.SEVENBITS,'EIGHTBITS':serial.EIGHTBITS}
+
+    # stopBits List
+    stopbits = {'STOPBITS_ONE':serial.STOPBITS_ONE,'STOPBITS_ONE_POINT_FIVE':serial.STOPBITS_ONE_POINT_FIVE,'STOPBITS_TWO':serial.STOPBITS_TWO}
+
     # serial object
     __main_conn = None
+    dataQueue = None
+    checkStatusQueue = None
+    out = None
+    __flag_out = None
 
+    try:
+        #   Constructor
+        def __init__(self, port, baud_rate, byte_size=serial.EIGHTBITS, parity=serial.PARITY_NONE, stop_bit=serial.STOPBITS_ONE):
 
-    #   Constructor
-    def __init__(self, port, baud_rate, byte_size=serial.EIGHTBITS, parity=serial.PARITY_NONE, stop_bit=serial.STOPBITS_ONE):
+                # initialize the connection and if anything ok open the port
+                self.__main_conn = serial.Serial(port, baud_rate, bytesize=byte_size, parity=parity, stopbits=stop_bit)
 
-            # initialize the connection and if anything ok open the port
-            self.__main_conn = serial.Serial(port, baud_rate, bytesize=byte_size, parity=parity, stopbits=stop_bit)
+                # Queue
+                self.dataQueue = queue.Queue()
+                self.checkStatusQueue = queue.Queue()
+
+                # Define Variables
+                self.out = ''
+                self.__flag_out = True
+
+    except serial.SerialException:
+        raise serial.SerialException
 
 
 
     # Close Connection of Serial Communication
     def close_connection(self):
         if self.__main_conn is not None:
-            self.__main_conn.close()
+            del self.__main_conn
 
     # Get Name of Current Port
     def get_name(self):
         return self.__main_conn.name
 
+    # Transmit Data
+    def transmit_data(self,data):
+        # pass data to __main_conn pySerial object write method
+        self.__main_conn.write(data)
+
     # Receive Data from Devices
     def receive_data(self):
-        pass
+        # And operation with __flag_out to check if want to close this thread
+        while True and self.__flag_out:
+            # to store received value into out variable
+            # and Make __flag_out = True
+            self.out = ''
+            self.__flag_out = True
+
+            # waiting for data to receive
+            while self.__main_conn.inWaiting() == 0 and self.__flag_out:
+                try:
+                    if self.checkStatusQueue.get_nowait() == 'Stop':
+                        self.__flag_out = False
+                except queue.Empty:
+                    pass
+
+
+
+            # Sleep for 0.25 second
+            time.sleep(0.05)
+
+            # receive data from the target device
+            while self.__main_conn.inWaiting() > 0 and self.__flag_out:
+                self.out += self.__main_conn.read(1).decode("utf-8")
+
+            if self.__flag_out:
+                # add to out variable
+                self.dataQueue.put(self.out)
 
     # Ports of Computers and it depends on os system
     @staticmethod
@@ -74,16 +129,3 @@ class pyMonitor():
             # return ports
             return linux_ports
 
-
-
-
-
-
-
-def main():
-    pass
-
-
-
-
-main()
