@@ -7,4 +7,10 @@
   
 # Required Library
   * pySerial
+	```
+	pip install pyserial
+	```
   * PyQt5
+	```
+	pip install pyqt5
+	```
