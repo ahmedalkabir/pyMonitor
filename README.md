@@ -14,3 +14,7 @@ pip install pyserial
 ```
 pip install pyqt5
 ```
+
+# Screenshot
+
+![showcase](https://raw.githubusercontent.com/ahmedalkabir/pyMonitor/master/screenshot.png)
