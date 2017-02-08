@@ -6,5 +6,5 @@
   other platforms
   
 # Required Library
-  *1- pySerial
-  *2- PyQt5
+  * pySerial
+  * PyQt5
