@@ -1,5 +1,4 @@
 ################## PyMonitor Project #########################
 
-1- Create UI By PyQT5 and include it to Project	(90% Done)
-2- Design class for UI (Done)
-3- Design class server-side and implement it in main.py
+1- Make Plain Text able to AutoScroll
+2- Complete Advanced Option Functions
