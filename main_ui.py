@@ -116,7 +116,7 @@ class Ui_window(ui.Ui_main_window):
             self.statusbar.showMessage('Disconnected')
 
     def send_data(self):
-        # To make sure it's connected 
+        # To make sure it's connected
         if self.pyPort is not None and self.worked:
             # Options of How Sending Data
             if self.text_option[0] == self.status_txt.currentText():
@@ -154,3 +154,6 @@ class Ui_window(ui.Ui_main_window):
     # when signal emitted the plainText Update
     def get_data(self):
         self.plainTextEdit.insertPlainText(self.received_data)
+        # if auto check box checked make platin text edit auto scrolling
+        if self.auto_scroll.isChecked():
+            self.plainTextEdit.ensureCursorVisible()
