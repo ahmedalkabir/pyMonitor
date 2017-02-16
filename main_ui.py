@@ -99,17 +99,21 @@ class Ui_window(ui.Ui_main_window):
             self.connect_btn.setEnabled(True)
 
     def btn_disconnect(self):
-        # Sent Stop to CheckStatusQueue to Stop pyPort.receive_data and Stop
-        # pyPort.receive_data thread
-        self.pyPort.checkStatusQueue.put('Stop')
-        # Make Worked False to Stop refresh_plain_text thread
-        self.worked = False
-        # Close the Connection
-        self.pyPort.close_connection()
-        # Return Connect Button to Normal State
-        self.connect_btn.setEnabled(True)
-        # Update Status Bar
-        self.statusbar.showMessage('Disconnected')
+
+        # To Make Sure that we're connected otherwise don't do any thing
+
+        if self.worked:
+            # Sent Stop to CheckStatusQueue to Stop pyPort.receive_data and Stop
+            # pyPort.receive_data thread
+            self.pyPort.checkStatusQueue.put('Stop')
+            # Make Worked False to Stop refresh_plain_text thread
+            self.worked = False
+            # Close the Connection
+            self.pyPort.close_connection()
+            # Return Connect Button to Normal State
+            self.connect_btn.setEnabled(True)
+            # Update Status Bar
+            self.statusbar.showMessage('Disconnected')
 
     def send_data(self):
         if self.pyPort is not None:
