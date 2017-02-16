@@ -116,7 +116,8 @@ class Ui_window(ui.Ui_main_window):
             self.statusbar.showMessage('Disconnected')
 
     def send_data(self):
-        if self.pyPort is not None:
+        # To make sure it's connected 
+        if self.pyPort is not None and self.worked:
             # Options of How Sending Data
             if self.text_option[0] == self.status_txt.currentText():
                 self.pyPort.transmit_data(self.lineEdit.text().encode())
