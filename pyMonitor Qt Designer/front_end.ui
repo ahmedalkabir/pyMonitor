@@ -114,13 +114,6 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="1">
-      <widget class="QPushButton" name="disconnect_btn">
-       <property name="text">
-        <string>Disconnect</string>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="0">
       <widget class="QPushButton" name="connect_btn">
        <property name="text">
@@ -128,7 +121,7 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="3">
+     <item row="0" column="4">
       <widget class="QPushButton" name="about">
        <property name="text">
         <string>About</string>
@@ -142,13 +135,22 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="disconnect_btn">
+       <property name="text">
+        <string>Disconnect</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QCheckBox" name="auto_scroll">
+       <property name="text">
+        <string>Auto Scroll</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
-   <zorder>gridLayoutWidget</zorder>
-   <zorder>verticalLayoutWidget</zorder>
-   <zorder>gridLayoutWidget_2</zorder>
-   <zorder>gridLayoutWidget_3</zorder>
-   <zorder>serial_port</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
