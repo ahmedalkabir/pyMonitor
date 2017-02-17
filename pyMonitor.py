@@ -136,7 +136,7 @@ class pyMonitor(object):
             # but we need to select right devices
             # to handle with it
             for list_ in list_dev_mac :
-                if list_.startswith('tty'):
+                if list_.startswith('cu.'):
                     try:
                         # Check ports
                         temp_port = serial.Serial(list_)
@@ -145,6 +145,6 @@ class pyMonitor(object):
                         list_mac.append(list_)
                     except(OSError, serial.SerialException):
                         pass
-                    
+
             # return ports
             return list_mac
