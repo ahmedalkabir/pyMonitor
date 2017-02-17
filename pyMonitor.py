@@ -7,7 +7,7 @@
 
 # Library
 import serial
-import sys,queue,time
+import sys,queue,time,os
 
 class pyMonitor(object):
 
@@ -129,3 +129,14 @@ class pyMonitor(object):
             # return ports
             return linux_ports
 
+        elif sys.platform.startswith('darwin'):
+            # list of devices
+            list_dev_mac = os.listdir('/dev/')
+            list_mac = []
+            # but we need to select right devices
+            # to handle with it
+            for list_ in list_dev_mac :
+                if list_.startswith('tty'):
+                    list_mac.append(list_)
+                    
+            return list_mac
