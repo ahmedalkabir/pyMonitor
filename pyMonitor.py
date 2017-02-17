@@ -137,12 +137,13 @@ class pyMonitor(object):
             # to handle with it
             for list_ in list_dev_mac :
                 if list_.startswith('cu.'):
+                    port = '/dev/' + list_
                     try:
                         # Check ports
-                        temp_port = serial.Serial(list_)
+                        temp_port = serial.Serial(port)
                         temp_port.close()
 
-                        list_mac.append(list_)
+                        list_mac.append(port)
                     except(OSError, serial.SerialException):
                         pass
 
