@@ -136,7 +136,7 @@ class pyMonitor(object):
             # but we need to select right devices
             # to handle with it
             for list_ in list_dev_mac :
-                if list_.startswith('cu.'):
+                if list_.startswith('tty.'):
                     port = '/dev/' + list_
                     try:
                         # Check ports
