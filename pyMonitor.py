@@ -7,7 +7,7 @@
 
 # Library
 import serial
-import sys,queue,time,os
+import sys,queue,time
 
 class pyMonitor(object):
 
@@ -88,7 +88,10 @@ class pyMonitor(object):
 
             # receive data from the target device
             while self.__main_conn.inWaiting() > 0 and self.__flag_out:
-                self.out += self.__main_conn.read(1).decode("utf-8")
+                try:
+                    self.out += self.__main_conn.read(1).decode("utf-8")
+                except UnicodeDecodeError:
+                    pass
 
             if self.__flag_out:
                 # add to out variable
@@ -129,23 +132,3 @@ class pyMonitor(object):
             # return ports
             return linux_ports
 
-        elif sys.platform.startswith('darwin'):
-            # list of devices
-            list_dev_mac = os.listdir('/dev/')
-            list_mac = []
-            # but we need to select right devices
-            # to handle with it
-            for list_ in list_dev_mac :
-                if list_.startswith('tty.'):
-                    port = '/dev/' + list_
-                    try:
-                        # Check ports
-                        temp_port = serial.Serial(port)
-                        temp_port.close()
-
-                        list_mac.append(port)
-                    except(OSError, serial.SerialException):
-                        pass
-
-            # return ports
-            return list_mac
