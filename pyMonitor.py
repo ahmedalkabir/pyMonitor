@@ -7,7 +7,7 @@
 
 # Library
 import serial
-import sys,queue,time
+import sys,queue,time,os
 
 class pyMonitor(object):
 
@@ -117,18 +117,43 @@ class pyMonitor(object):
             return win_ports
 
         elif sys.platform.startswith('linux'):                      # For Linux Platform
-            ports = ['/dev/ttyUSB%s'%(i) for i in range(256)]
+            # list of devices
+            list_dev_mac = os.listdir('/dev/')
+            list_linux = []
+            # but we need to select right devices
+            # to handle with it
+            for list_ in list_dev_linux:
+                if list_.startswith('tty'):
+                    port = '/dev/' + list_
+                    try:
+                        # Check ports
+                        temp_port = serial.Serial(port)
+                        temp_port.close()
 
-            linux_ports = []
-            for port in ports:
-                try:
-                    # Check if port it works if work add to results list otherwise ignore it
-                    temp_port = serial.Serial(port)
-                    temp_port.close()
-
-                    linux_ports.append(port)
-                except(OSError, serial.SerialException):
-                    pass
+                        list_linux.append(port)
+                    except(OSError, serial.SerialException):
+                        pass
             # return ports
-            return linux_ports
+            return list_linux
+        
+        # For Mac Devices
+        elif sys.platform.startswith('darwin'):
+            # list of devices
+            list_dev_mac = os.listdir('/dev/')
+            list_mac = []
+            # but we need to select right devices
+            # to handle with it
+            for list_ in list_dev_mac :
+                if list_.startswith('cu.'):
+                    port = '/dev/' + list_
+                    try:
+                        # Check ports
+                        temp_port = serial.Serial(port)
+                        temp_port.close()
 
+                        list_mac.append(port)
+                    except(OSError, serial.SerialException):
+                        pass
+
+            # return ports
+            return list_mac
