@@ -118,7 +118,7 @@ class pyMonitor(object):
 
         elif sys.platform.startswith('linux'):                      # For Linux Platform
             # list of devices
-            list_dev_mac = os.listdir('/dev/')
+            list_dev_linux = os.listdir('/dev/')
             list_linux = []
             # but we need to select right devices
             # to handle with it
@@ -132,6 +132,8 @@ class pyMonitor(object):
 
                         list_linux.append(port)
                     except(OSError, serial.SerialException):
+                        # debug: just want to check available devices 
+                        print('-->{} - {}\n'.format(port, serial.SerialException.__str__))
                         pass
             # return ports
             return list_linux
